@@ -1,15 +1,9 @@
-
-
 library(plyr)
 library(dplyr)
 library(reshape2)
 
 
-    # Load: activity labels
-    activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")[,2]
 
-    # Load: data column names
-    features <- read.table("./UCI HAR Dataset/features.txt")[,2]
 
     # Read data
     x_train = read.table("./UCI HAR Dataset/train/X_train.txt")
@@ -19,6 +13,12 @@ library(reshape2)
     x_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
     y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
     subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")    
+
+    # Load: data column names
+    features <- read.table("./UCI HAR Dataset/features.txt")[,2]
+
+    # Load: activity labels
+    activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")[,2]
 
 # 3. Uses descriptive activity names to name the activities in the data set
     names(x_train) = features
